@@ -28,20 +28,20 @@ app.post("/app/roll/", function(req, res) {
     res.status(200).send(result)
 })
 
-app.post("/app/roll/:sides/", function(req, res) {
+app.get("/app/roll/:sides/", function(req, res) {
     var sides = parseInt(req.params.sides);
     var result = roll(sides, 2, 1)
     res.status(200).send(result)
 })
 
-app.post("/app/roll/:sides/:dice/", function(req, res){
+app.get("/app/roll/:sides/:dice/", function(req, res){
     var sides = parseInt(req.params.sides);
     var dice = parseInt(req.params.dice);
     var result = roll(sides, dice, 1)
     res.status(200).send(result)
 })
 
-app.post("/app/roll/:sides/:dice/:rolls/", function(req, res){
+app.get("/app/roll/:sides/:dice/:rolls/", function(req, res){
     var sides = parseInt(req.params.sides);
     var dice = parseInt(req.params.dice);
     var rolls = parseInt(req.params.rolls);
